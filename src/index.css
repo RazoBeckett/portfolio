@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&family=Special+Elite&display=swap");
+@import "tailwindcss";
+
+:root {
+	--paper: #fbfaf3;
+	--grid: #d6e3ee;
+	--ink: #233;
+	--pencil: #41506b;
+	--red: #d8504d;
+	--tape: rgba(220, 210, 150, 0.55);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #cdd3c8;
+	font-family: "Kalam", "Comic Sans MS", cursive;
+	color: var(--ink);
+	padding: 30px 14px 80px;
+	line-height: 1.5;
+}
+.book {
+	max-width: 940px;
+	margin: 0 auto;
+	background: var(--paper);
+	background-image:
+		linear-gradient(var(--grid) 1px, transparent 1px),
+		linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+	background-size: 24px 24px;
+	box-shadow:
+		0 20px 50px rgba(0, 0, 0, 0.3),
+		inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+	position: relative;
+	padding: 54px 46px 60px 86px;
+}
+.book::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 64px;
+	width: 2px;
+	background: var(--red);
+	opacity: 0.5;
+}
+.holes {
+	position: absolute;
+	left: 24px;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 40px 0;
+}
+.holes i {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #cdd3c8;
+	box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
+	display: block;
+}
+.stamp {
+	position: absolute;
+	top: 28px;
+	right: 30px;
+	border: 3px solid var(--red);
+	color: var(--red);
+	opacity: 0.7;
+	transform: rotate(8deg);
+	font-family: "Special Elite", monospace;
+	padding: 5px 14px;
+	font-size: 13px;
+	letter-spacing: 1px;
+	border-radius: 4px;
+}
+.head {
+	display: flex;
+	align-items: baseline;
+	gap: 16px;
+	flex-wrap: wrap;
+	border-bottom: 2px dashed #b9c4cf;
+	padding-bottom: 14px;
+}
+.head h1 {
+	font-family: "Caveat", cursive;
+	font-size: 54px;
+	line-height: 1;
+	color: var(--pencil);
+}
+.head .sub {
+	font-size: 17px;
+	color: var(--red);
+}
+.meta-scribble {
+	font-family: "Caveat", cursive;
+	font-size: 20px;
+	color: var(--pencil);
+	margin-top: 8px;
+}
+.meta-scribble a {
+	color: var(--pencil);
+}
+.entry {
+	margin-top: 30px;
+}
+.date {
+	font-family: "Special Elite", monospace;
+	font-size: 12px;
+	color: #8a93a0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+h2.hand {
+	font-family: "Caveat", cursive;
+	font-size: 34px;
+	color: var(--pencil);
+	margin: 2px 0 10px;
+	display: inline-block;
+}
+h2.hand::after {
+	content: "";
+	display: block;
+	height: 8px;
+	width: 100%;
+	background: rgba(216, 80, 77, 0.25);
+	margin-top: -8px;
+	border-radius: 3px;
+}
+p.body {
+	font-size: 18px;
+	max-width: 60ch;
+}
+.doodle {
+	font-family: "Caveat", cursive;
+	color: var(--red);
+	font-size: 22px;
+	transform: rotate(-3deg);
+	display: inline-block;
+	margin: 6px 0;
+}
+.arrow {
+	font-family: "Caveat", cursive;
+	color: var(--pencil);
+	font-size: 20px;
+}
+
+.specimens {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 28px 30px;
+	margin-top: 20px;
+}
+.pin {
+	position: relative;
+	width: 260px;
+	background: #fff;
+	padding: 10px 10px 0;
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+	transform: rotate(var(--r, -2deg));
+	transition: transform 0.2s;
+	text-decoration: none;
+	color: var(--ink);
+}
+.pin:hover {
+	transform: rotate(0deg) scale(1.03);
+	z-index: 3;
+}
+.pin::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%) rotate(-4deg);
+	width: 86px;
+	height: 26px;
+	background: var(--tape);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.pin img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	display: block;
+}
+.pin .cap {
+	padding: 8px 4px 12px;
+}
+.pin .cap h3 {
+	font-family: "Caveat", cursive;
+	font-size: 26px;
+	line-height: 1;
+	color: var(--pencil);
+}
+.pin .cap .tags {
+	font-family: "Special Elite", monospace;
+	font-size: 10px;
+	color: var(--red);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 4px 0 6px;
+}
+.pin .cap p {
+	font-size: 14px;
+	line-height: 1.4;
+}
+.pin .cap .link {
+	font-family: "Special Elite", monospace;
+	font-size: 10px;
+	color: #8a93a0;
+	margin-top: 6px;
+	display: block;
+}
+.pin:nth-child(2n) {
+	--r: 2.5deg;
+}
+.pin:nth-child(3n) {
+	--r: -3.5deg;
+}
+.pin:nth-child(5n) {
+	--r: 1.5deg;
+}
+
+.contact {
+	margin-top: 44px;
+	display: flex;
+	gap: 26px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+.sticky {
+	background: #fff6a8;
+	width: 280px;
+	padding: 22px 22px 26px;
+	box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+	transform: rotate(-1.5deg);
+}
+.sticky h2 {
+	font-family: "Caveat", cursive;
+	font-size: 30px;
+	color: #8a6d00;
+	margin-bottom: 8px;
+}
+.sticky a {
+	display: block;
+	color: var(--ink);
+	font-size: 16px;
+	padding: 3px 0;
+	text-decoration: none;
+	border-bottom: 1px dotted #cbb94a;
+}
+.sticky a:hover {
+	color: var(--red);
+}
+.sticky a b {
+	font-family: "Special Elite", monospace;
+	font-size: 10px;
+	color: #8a6d00;
+	text-transform: uppercase;
+	display: block;
+	letter-spacing: 1px;
+}
+.annotate {
+	flex: 1;
+	min-width: 200px;
+	padding-top: 20px;
+}
+.annotate .doodle {
+	font-size: 26px;
+	display: block;
+	margin: 14px 0;
+}
+footer {
+	font-family: "Special Elite", monospace;
+	font-size: 12px;
+	color: #8a93a0;
+	margin-top: 40px;
+	border-top: 2px dashed #b9c4cf;
+	padding-top: 16px;
+}
+footer a {
+	color: var(--pencil);
+}
+@media (max-width: 620px) {
+	.book {
+		padding: 40px 22px 50px 60px;
+	}
+	.book::before {
+		left: 40px;
+	}
+	.holes {
+		left: 12px;
+	}
+	.pin,
+	.sticky {
+		width: 100%;
+	}
+}
