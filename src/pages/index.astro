@@ -1,0 +1,128 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/profile";
+import { projects } from "../data/projects";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mayur Raut's (aka Razo Beckett) personal website showcasing his skills in Python Development, Linux, DevOps, Cloud Engineering, and more. Explore his projects and portfolio."
+    />
+    <meta
+      name="keywords"
+      content="Python, Linux, DevOps, Cloud Engineer, Mayur Raut, RazoBeckett, Razo Beckett"
+    />
+    <meta property="og:title" content="Mayur Raut - Developer, Linux, DevOps, and Cloud Engineer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mayurraut.dev" />
+    <meta property="og:site_name" content="Mayur Raut (a.k.a RazoBeckett)" />
+    <meta
+      property="og:description"
+      content="Mayur Raut's (aka Razo Beckett) personal website showcasing his skills in Python Development, Linux, DevOps, Cloud Engineering, and more. Explore his projects and portfolio."
+    />
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1908579192838496256/ee_l00D__400x400.jpg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta name="darkreader-lock" />
+    <meta name="google-site-verification" content="TRq6VIOk-8etHkbV9rzrdovEaavnSu7pIvJXj_u501M" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Mayur Raut",
+      "alternateName": "Razo Beckett",
+      "url": "https://mayurraut.dev",
+      "sameAs": [
+        "https://github.com/RazoBeckett",
+        "https://twitter.com/RazoBeckett",
+        "https://www.linkedin.com/in/mayurraut0/",
+        "https://www.instagram.com/razobeckett"
+      ],
+      "jobTitle": "DevOps Engineer & Developer",
+      "description": "Mayur Raut's (aka Razo Beckett) personal website showcasing his skills in Python Development, Linux, DevOps, Cloud Engineering, and more. Explore his projects and portfolio."
+    })} />
+    <title>Mayur Raut - Developer, Linux, DevOps, and Cloud Engineer</title>
+    <link rel="icon" type="image/png" href="https://pbs.twimg.com/profile_images/1908579192838496256/ee_l00D__400x400.jpg" />
+  </head>
+  <body>
+    <div class="book">
+      <div class="holes">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+      <div class="stamp">{profile.stamp}</div>
+
+      <div class="head">
+        <h1>{profile.name}</h1>
+        <span class="sub">— a.k.a {profile.handle}</span>
+      </div>
+      <p class="meta-scribble">
+        {profile.tagline} &nbsp; ✎ &nbsp;
+        <a href={profile.resumeHref}>résumé</a> ·{" "}
+        <a href={profile.blogHref}>blog</a>
+      </p>
+
+      <div class="entry">
+        <div class="date">Entry №01 — whoami</div>
+        <h2 class="hand">A few notes on me</h2>
+        <p class="body">{profile.about}</p>
+        <span class="doodle">↑ still figuring it out, one commit at a time</span>
+      </div>
+
+      <div class="entry">
+        <div class="date">Entry №02 — the lab bench</div>
+        <h2 class="hand">Things I've built &amp; taped in</h2>
+        <span class="arrow">scribbles, screenshots &amp; specimens ↓</span>
+        <div class="specimens">
+          {projects.map((p) => (
+            <a class="pin" target="_blank" rel="noreferrer" href={p.href}>
+              <img src={p.img} alt={p.title} />
+              <div class="cap">
+                <h3>{p.title}</h3>
+                <div class="tags">{p.tags}</div>
+                <p>{p.desc}</p>
+                <span class="link">→ open repo</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="date">Entry №03 — reach me</div>
+        <div class="contact">
+          <div class="sticky">
+            <h2>Find me here ✦</h2>
+            {profile.links.map((l) => (
+              <a target="_blank" rel="noreferrer" href={l.href}>
+                <b>{l.label}</b>
+                {l.text}
+              </a>
+            ))}
+          </div>
+          <div class="annotate">
+            <span class="doodle">← drop a line anytime!</span>
+            <span class="doodle" style="transform: rotate(2deg)">PRs welcome ✓</span>
+            <span class="doodle" style="transform: rotate(-2deg); color: var(--pencil)">~ contributing to open source ♥</span>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        {profile.copyright} ·{" "}
+        {profile.footerLinks.map((l, i) => (
+          <span>
+            {i > 0 && " / "}
+            <a target="_blank" rel="noreferrer" href={l.href}>{l.text}</a>
+          </span>
+        ))}
+      </footer>
+    </div>
+  </body>
+</html>
