@@ -1,6 +1,13 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Mayur Raut — Developer",
+  "short_name": "Mayur Raut",
+  "description": "Mayur Raut's (aka Razo Beckett) personal website showcasing his skills in Go Development, Linux, DevOps, Cloud Engineering, and more.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "theme_color": "#fbfaf3",
+  "background_color": "#cdd3c8",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -14,8 +21,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
